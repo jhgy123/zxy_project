@@ -1,0 +1,94 @@
+<!doctype html>
+{% load static %}
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>智学云</title>
+		<script type="text/javascript" src="{% static 'jquery/jquery-3.4.1.min.js' %}"></script>
+		<link type="text/css" rel="stylesheet" href="{% static 'bootstrap3/css/bootstrap.min.css' %}" />
+		<script type="text/javascript" src="{% static 'bootstrap3/js/bootstrap.min.js' %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}" />
+		<script src="{% static 'jquery/jquery-3.4.1.min.js' %}"></script>
+		<link href="{% static 'css/footer.css' %}" rel="stylesheet">
+		<link href="{% static 'css/ver_code.css' %}" rel="stylesheet" />
+		<script src="{% static 'js/md5.js' %}"></script>
+		<script src="{% static 'js/ver_code.js' %}"></script>
+		<script src="{% static 'js/login_student.js' %}"></script>
+		<script src="{% static 'js/check_reset_s.js' %}"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse" role="navigation" style="margin-bottom:0">
+			<div class="container-fluid">
+				<div class="navbar-header col-md-3">
+					<a class="navbar-brand" href="javascript:void(0)">智学云——教学办公一体化系统</a>
+				</div>
+				<div class="col-md-offset-8">
+					<ul class="nav navbar-nav">
+						<li><a href="{% url 'zxy:login_teacher' %}"><b class="glyphicon glyphicon-user"></b>教师登录</a></li>
+						<li class="active"><a href="{% url 'zxy:login_student' %}"><b class="glyphicon glyphicon-user"></b>学生登录</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								关于
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="/xadmin/">后台管理员登录</a></li>
+								<li class="divider"></li>
+								<li><a href="#">联系我们</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="jumbotron text-center" id="header">
+			<h1>欢迎使用智学云——教学办公一体化平台！</h1>
+			<!-- <p>教师登录页面</p> -->
+		</div>
+		<div class="wrap flex-c-c">
+			<form action="{% url 'zxy:reset_student' %}" method="post" class="flex-c-c" onsubmit="return check_reset_s()">
+				{% csrf_token %}
+				<h1 class="warning">学生登录页面</h1>
+				<ul class="select__list">
+					<li id="js-usr-rtn" class="select__label"><a href="{% url 'zxy:login_student' %}">登录</a></li>
+					<li id="none" class="select__label">&nbsp &nbsp </li>
+					<li id="js-usr-rst" class="select__label select__label--active"><a href="{% url 'zxy:reset_student' %}">忘记密码</a></li>
+				</ul>
+				<span class="pointer --usr-rst"></span>
+				<input type="text" name="studentname" placeholder="真实姓名" class="ui-field" id="js-field__name" required="required"/>
+				<span class="error" id="name_error"></span>
+				<input type="number" name="studentid" placeholder="学号" class="ui-field" id="js-field__id" required="required"/>
+				<span class="error" id="id_error"></span>
+				<input type="email" name="studentemail" placeholder="绑定的邮箱" class="ui-field" id="js-field__email" required="required"/>
+				<span class="error" id="email_error"></span>
+				<input type="password" name="studentpaw" placeholder="新密码" class="ui-field" id="js-field__pass" required="required"/>
+				<span class="error" id="pass_error"></span>
+				<input type="password" placeholder="确认新密码" class="ui-field" id="js-field__r-pass" required="required"/>
+				<span class="error" id="r-pass_error"></span>
+				<input type="text" value="" placeholder="请输入验证码（不区分大小写）" class="input-val" required="required">
+				<span class="error text-center" id="vc_error"></span>
+				<canvas class="center-block" id="canvas" width="100" height="30"></canvas>
+
+				<button id="js-btn" class="ver_code ui-button --usr-rst" type="submit"></button>
+				<a href="{% url 'zxy:login_teacher' %}" class="btn btn-primary" id="transfer">进入教师登录页面</a>
+			</form>
+		</div>
+		<footer class="bs-docs-footer">
+				  <div class="container">
+				    <ul class="bs-docs-footer-links">
+				      <li><a href="http://www.ynu.edu.cn">云南大学</a></li>
+				      <li><a href="#">联系我们</a></li>
+				      <li><a href="#">关于</a></li>
+				    </ul>
+					<h4>
+					  <strong>智学云——教学办公一体化平台</strong>
+					</h4>
+				    <p>我们一直致力于为广大师生提供更多的优质服务！</p>
+
+				    <!-- <p>Code licensed <a href="https://github.com/twbs/bootstrap/blob/v3-dev/LICENSE" rel="license noopener" target="_blank">MIT</a>, docs <a href="https://creativecommons.org/licenses/by/3.0/" rel="license noopener" target="_blank">CC BY 3.0</a>.</p> -->
+
+				  </div>
+				</footer>
+	</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>智学云首页</title>
+		<script type="text/javascript" src="{% static 'jquery/jquery-3.4.1.min.js' %}"></script>
+		<link type="text/css" rel="stylesheet" href="{% static 'bootstrap3/css/bootstrap.min.css' %}" />
+		<script type="text/javascript" src="{% static 'bootstrap3/js/bootstrap.min.js' %}"></script>
+		<style>
+			#header{
+				background-color: #96b97d;
+			}
+			.fakeimg {
+				height: 300px;
+				background: #96b97d;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<div class="jumbotron text-center" style="margin-bottom:0" id="header">
+			<h1>欢迎使用智学云——教学办公一体化平台！</h1>
+			<p>让教学办公更简便！</p>
+		</div>
+
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="javascript:void(0)">智学云——教学办公一体化平台</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#"><span class="glyphicon glyphicon-home">&nbsp </span>主页</a></li>
+						<li><a href="{% url 'zxy:login_teacher' %}"><span class="glyphicon glyphicon-eye-open">&nbsp </span><strong>登录</strong></a></li>
+						<!-- <li><a href="#">页面 3</a></li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4">
+					<h2>关于我们</h2>
+					<h5>智学云——教学办公一体化平台:</h5>
+					<div class="fakeimg"><img src="{% static 'img/about.svg' %}" class="center-block" width="293.328" height="300" alt=""></div>
+					<p style="text-indent: 2em;">该平台由<strong>云南大学大学生创新创业项目团队</strong>搭建而成，意在为教育管理者、教师和学生提供一个协作平台，自动处理教学过程中的数据，对课程的教学效果以及培养方案的达成效果进行自动计算，并自动生成可视化的分析结果，从而提高教学信息处理效率，简化处理流程，完善培养方案的修订流程，促进高校工程教育认证的实施。另一方面，我们也将探索利用机器学习智能技术，结合大数据分析，实现海量文档自动智能提取、创造，为学生提供自主学习的平台。</p>
+					<h3>相关链接</h3>
+					<p>您可能会使用到的链接：</p>
+					<ul class="nav nav-pills nav-stacked">
+						<li class="active"><a href="http://www.ynu.edu.cn">云南大学官网</a></li>
+						<li class="active"><a href="https://ehall.ynu.edu.cn/new/index.html">云南大学网上服务大厅</a></li>
+						<li class="active"><a href="http://xk.ynu.edu.cn/xsxkapp/sys/xsxkapp/*default/index.do">学生选课系统</a></li>
+					</ul>
+					<hr class="hidden-sm hidden-md hidden-lg">
+				</div>
+				<div class="col-sm-8">
+					<h2>教学效果可视化</h2>
+					<h5 class="label label-primary">及时反馈</h5>
+					<div class="fakeimg"><img src="{% static 'img/jiaoxuexiaoguokeshihua.svg' %}" class="center-block" width="616.656" height="300" alt=""></div><!-- width="470" -->
+					<p style="text-indent: 2em;">以课堂教学学生评价与课堂题库检测、课程教学过程中的考试、作业、实验报告等教学记录文档为依据，自动进行数据分析，生成可视化图形（雷达图、柱状图等)，反映教学效果。</p>
+					<!-- <p>菜鸟教程，学的不仅是技术，更是梦想！！！菜鸟教程，学的不仅是技术，更是梦想！！！菜鸟教程，学的不仅是技术，更是梦想！！！</p> -->
+					<br>
+					<h2>定量评价人才培养方案</h2>
+					<h5 class="label label-primary">精准定位</h5>
+					<div class="fakeimg"><img src="{% static 'img/dingliangpinjiarencaipeiyangfangan.svg' %}" class="center-block" width="616.656" height="300" alt=""></div>
+					<p style="text-indent: 2em;">分两部分进行数据计算。一是学生在读期间，通过考试成绩、作业成绩、实习实践成绩、在校期间参加竞赛、大创项目、所获荣誉、参与社会实践活动情况等等按一定比例进行定量计算，给出一个分数。二是针对学生毕业后，收集相关数据，如一次就业率、就业质量、研究生录取率、录取学校层次等以及毕业五年后学生专业达到的水平(时间跨度)，按一定比例进行加权计算得到一个分数。两个分数按比例计算，根据最终得到的数据来评价该专业人才培养方案。</p>
+					<!-- <p>菜鸟教程，学的不仅是技术，更是梦想！！！菜鸟教程，学的不仅是技术，更是梦想！！！菜鸟教程，学的不仅是技术，更是梦想！！！</p> -->
+				</div>
+			</div>
+		</div>
+
+		<!-- <div class="jumbotron text-center" style="margin-bottom:0">
+			<p>云南大学<small>——大创项目</small></p>
+		</div> -->
+		<hr />
+		<footer class="footer">
+			<div class="container">
+				<div class="row footer-top">
+					<div class="col-md-6 col-lg-6">
+						<h4>
+							<img src="{% static 'img/YNULogo.png' %}" alt="">
+							<strong>智学云——教学办公一体化平台</strong>
+						</h4>
+						<p>我们一直致力于为广大师生提供更多的优质服务！</p>
+					</div>
+					<div class="col-md-6  col-lg-6">
+						<div class="row about">
+							<div class="col-sm-3">
+								<h4>关于</h4>
+								<ul class="list-unstyled">
+									<li><a href="#">关于我们</a></li>
+									<li><a href="#">广告合作</a></li>
+									<li><a href="#">友情链接</a></li>
+									<li><a href="#">招聘</a></li>
+								</ul>
+							</div>
+							<div class="col-sm-3">
+								<h4>联系方式</h4>
+								<ul class="list-unstyled">
+									<li><a href="#">
+											<!-- "https://weibo.com/bootcss" title="Bootstrap中文网官方微博" -->
+											<!-- target="_blank"> -->新浪微博</a></li>
+									<li><a href="#">
+											<!-- "mailto:admin@bootcss.com"> -->电子邮件</a></li>
+								</ul>
+							</div>
+							<div class="col-sm-3">
+								<h4>旗下网站</h4>
+								<ul class="list-unstyled">
+									<li><a href="#">
+											<!-- "https://www.bootcdn.cn/" target="_blank"> -->xxxxxxxx</a></li>
+									<li><a href="#">
+											<!-- "https://pkg.phpcomposer.com/" target="_blank"> -->xxxxxxxx</a></li>
+								</ul>
+							</div>
+							<div class="col-sm-3">
+								<h4>特别致谢</h4>
+								<ul class="list-unstyled">
+									<li><a href="#">
+											<!-- "https://www.maoyuncloud.com/" target="_blank"> -->xxxxxxxx</a></li>
+
+								</ul>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<hr />
+				<div class="row footer-bottom">
+					<ul class="list-inline text-center">
+						<li><a href="#">
+								<!-- "https://beian.miit.gov.cn/" target="_blank"> -->京ICP备xxxxxxxx号-x</a></li>
+						<li>京公网安备xxxxxxxxxxxxxx</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

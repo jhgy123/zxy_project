@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>登录信息错误警告</title>
+		<script type="text/javascript" src="{% static 'jquery/jquery-3.4.1.min.js' %}"></script>
+		<link type="text/css" rel="stylesheet" href="{% static 'bootstrap3/css/bootstrap.min.css' %}" />
+		<script type="text/javascript" src="{% static 'bootstrap3/js/bootstrap.min.js' %}"></script>
+		<style>
+			.button {
+			    background-color: #008CBA;
+			    border: 2px solid #555555;
+			    color: white;
+			    padding: 15px 32px;
+			    text-align: center;
+			    text-decoration: none;
+			    display: inline-block;
+			    font-size: 24px;
+				border-radius: 12px;
+			}
+			#relogin{
+				color: white;
+			}
+			h1{
+				color: #B92C28;
+			}
+			#header{
+				background-color: #96b97d;
+			}
+		</style>
+	</head>
+
+	<body>
+<!--header-->
+		<div class="jumbotron text-center" style="margin-bottom:0" id="header">
+			<h1>欢迎使用智学云——教学办公一体化平台！</h1>
+			<p>让教学办公更简便！</p>
+		</div>
+<!--context-->
+		<h1 align="center" >用户名或密码错误，请重新登录！</h1>
+		<div style="text-align: center;" id="context">
+		<button type="button" class="button"><a href="{% url 'zxy:login_student' %}" id="relogin">重新登录</a></button>
+		</div>
+		<hr/>
+<!--footer-->
+		<footer class="footer">
+			<div class="container">
+				<div class="row footer-top">
+					<div class="col-md-6 col-lg-6">
+						<h4>
+							<img src="{% static 'img/YNULogo.png' %}" alt="">
+							<strong>智学云——教学办公一体化平台</strong>
+						</h4>
+						<p>我们一直致力于为广大师生提供更多的优质服务！</p>
+					</div>
+					<div class="col-md-6  col-lg-6">
+						<div class="row about">
+							<div class="col-sm-3">
+								<h4>关于</h4>
+								<ul class="list-unstyled">
+									<li><a href="#">关于我们</a></li>
+									<li><a href="#">广告合作</a></li>
+									<li><a href="#">友情链接</a></li>
+									<li><a href="#">招聘</a></li>
+								</ul>
+							</div>
+							<div class="col-sm-3">
+								<h4>联系方式</h4>
+								<ul class="list-unstyled">
+									<li><a href="#">
+											<!-- "https://weibo.com/bootcss" title="Bootstrap中文网官方微博" -->
+											<!-- target="_blank"> -->新浪微博</a></li>
+									<li><a href="#">
+											<!-- "mailto:admin@bootcss.com"> -->电子邮件</a></li>
+								</ul>
+							</div>
+							<div class="col-sm-3">
+								<h4>旗下网站</h4>
+								<ul class="list-unstyled">
+									<li><a href="#">
+											<!-- "https://www.bootcdn.cn/" target="_blank"> -->xxxxxxxx</a></li>
+									<li><a href="#">
+											<!-- "https://pkg.phpcomposer.com/" target="_blank"> -->xxxxxxxx</a></li>
+								</ul>
+							</div>
+							<div class="col-sm-3">
+								<h4>特别致谢</h4>
+								<ul class="list-unstyled">
+									<li><a href="#">
+											<!-- "https://www.maoyuncloud.com/" target="_blank"> -->xxxxxxxx</a></li>
+
+								</ul>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<hr />
+				<div class="row footer-bottom">
+					<ul class="list-inline text-center">
+						<li><a href="#">
+								<!-- "https://beian.miit.gov.cn/" target="_blank"> -->京ICP备xxxxxxxx号-x</a></li>
+						<li>京公网安备xxxxxxxxxxxxxx</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
